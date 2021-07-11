@@ -1,0 +1,43 @@
+#wrapper-title{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#title{
+    font-size: large;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#subtitle{
+    font-size: medium;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.column-button {
+    width: 18%;
+    border: 2px solid red;
+}
+
+.button-main {
+    color: blue;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 13px;
+}

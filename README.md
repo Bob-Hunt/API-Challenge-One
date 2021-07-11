@@ -41,6 +41,10 @@ F1 Racing API (http://ergast.com/mrd/ (Links to an external site.))
 Cat Facts API (https://alexwohlbruck.github.io/cat-facts/ (Links to an external site.))
 ***If you want to use another site, it MUST be approved by an instructor***
 
+IMAGES:
+Ghibli Studio images have been downloaded from ghibli.jp/info/013409/ with permission.
+The images were released with this handwritten message from Ghibli producer Toshio Suzuki: “Please use them freely within the scope of common sense.”
+
  
 
 Submission Guidelines
