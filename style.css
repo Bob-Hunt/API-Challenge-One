@@ -32,7 +32,7 @@
 
 .column-button {
     width: 18%;
-    border: 2px solid red;
+    height: 50px
 }
 
 .button-main {
@@ -40,4 +40,9 @@
     min-width: 100%;
     min-height: 100%;
     font-size: 13px;
+    border-radius: 5px;
+}
+
+.btn-translate {
+    border-radius: 5px;
 }
