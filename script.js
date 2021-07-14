@@ -8,6 +8,8 @@ const vehiclesUrl = `${baseUrl}vehicles`;
 
 let myUrl;
 
+let displayItems = document.querySelector('.ul-display');
+
 function chooseInput(mybutton){
     console.log(mybutton.id);
 
@@ -48,7 +50,12 @@ async function getFetch(myParameter){
 
         .then((data) => {
             //work with json data here
-            console.log(`type: `,typeof data);
+            for (item of data){
+                let listItem = document.createElement('li');
+                listItem.innerHTML = '<p>' + item.name + '</p>';
+                displayItems.appendChild(listItem);
+            }
+            // console.log(`type: `,typeof data);
             console.log(data.length);
             console.log(data);
         })
