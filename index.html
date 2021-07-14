@@ -23,56 +23,61 @@
             </div>
             <div class="row">
                 <div id="subtitle" class="column">
-                    <h2>Select a category to start exploring:</h2>
+                    <h2>'CLICK' a category to start exploring:</h2>
                 </div>
             </div>
 
         </div>
         
-        <div class="container"> 
-            <div id="main-categories" class="row">
+        <button class="container"> 
+            <button class="multibutton">
+                <div id="main-categories" class="row">
 
-                <div id="films" class="column-button">
-                    <button class="button-main">Ghibli Films</button>
-                    <div class="row">
-                        <ul id="filmsList"></ul>
+                    <div id="films" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="films">Ghibli Films</button>
+                        <div class="row">
+                            <ul id="filmsList"></ul>
+                        </div>
                     </div>
-                </div>
 
-                <div id="people" class="column-button">
-                    <button class="button-main">Ghibli Characters (People)</button>
-                    <div class="row">
-                        <ul id="peopleList"></ul>
+                    <div id="people" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="people">Ghibli Characters (People)</button>
+                        <div class="row">
+                            <ul id="peopleList"></ul>
+                        </div>
                     </div>
-                </div>
 
-                <div id="species" class="column-button">
-                    <button class="button-main">Ghibli Characters (Species)</button>
-                    <div class="row">
-                        <ul id="speciesList"></ul>
+                    <div id="species" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="species">Ghibli Characters (Species)</button>
+                        <div class="row">
+                            <ul id="speciesList"></ul>
+                        </div>
                     </div>
-                </div>
 
-                <div id="locations" class="column-button">
-                    <button class="button-main">Ghibli Locations</button>
-                    <div class="row">
-                        <ul id="locationsList"></ul>
+                    <div id="locations" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="locations">Ghibli Locations</button>
+                        <div class="row">
+                            <ul id="locationsList"></ul>
+                        </div>
                     </div>
-                </div>
 
-                <div id="vehicles" class="column-button">
-                    <button class="button-main">Ghibli Vehicles</button>
-                    <div class="row">
-                        <ul id="VehiclesList"></ul>
+                    <div id="vehicles" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="vehicles">Ghibli Vehicles</button>
+                        <div class="row">
+                            <ul id="VehiclesList"></ul>
+                        </div>
                     </div>
-                </div>
 
-            </div>
-            <div id=displayList>
-                <ul class="ul-display">
-                    <!-- selected list will be displayed here -->
-                </ul>
-            </div>
+
+                </div>
+            </button>
+            <!-- <form> -->
+                <div id=displayList>
+                    <ul class="ul-display">
+                        <!-- selected list will be displayed here -->
+                    </ul>
+                </div>
+            <!-- </form>  -->
         </div>
     </div>
     <!-- Bootstrap!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
