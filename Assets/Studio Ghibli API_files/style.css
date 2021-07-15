@@ -1,35 +1,5 @@
-body {
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-}
-
 .body-wrapper {
-    height: auto;
-    min-height: 100vh;
-
-    width: 100vw;
-    /* background-image: url("./Assets/nausicaa009.jpeg"); */
-    /* background-image: url("./Assets/chihiro007.jpeg"); */
-    /* background-image: url("./Assets/chihiro011.jpeg"); */
-    /* background-image: url("./Assets/chihiro018.jpeg"); */
-    background-image: url("./Assets/chihiro036.jpeg");
-    /* background-image: url("./Assets/chihiro041.jpeg"); */
-    /* background-image: url("./Assets/laputa039.jpeg"); */
-    /* background-image: url("./Assets/nausicaa009.jpeg"); */
-    /* background-image: url("./Assets/nausicaa010.jpeg"); */
-    /* background-image: url("./Assets/nausicaa049.jpeg"); */
-    /* background-image: url("./Assets/onyourmark001.jpeg"); */
-    /* background-image: url("./Assets/onyourmark005.jpeg"); */
-    /* background-image: url("./Assets/onyourmark021.jpeg"); */
-    /* background-image: url("./Assets/onyourmark027.jpeg"); */
-    /* background-image: url("./Assets/redturtle017.jpeg"); */
-    /* background-image: url("./Assets/redturtle034.jpeg"); */
-    /* background-image: url("./Assets/totoro029.jpeg"); */
-    /* background-image: url("./Assets/totoro042.jpeg"); */
-
-
-    background-color: blue;
+    background-image: url("./Assets/nausicaa009.jpeg");
 }
 
 .outer-wrapper{
@@ -98,10 +68,6 @@ background-color: bisque;
     flex-wrap: wrap;
     border-left: 2px solid black;
     width: 32%;
-    font-size: 24px;
-    background-color: rgba(255, 250, 240, 0.651);
-    /* color:floralwhite; */
-    color: black;
 }
 
 .ul-wrapper {
@@ -127,7 +93,7 @@ background-color: bisque;
 }
 
 .button-main {
-    color:rgb(88, 4, 4);
+    color: blue;
     min-width: 100%;
     min-height: 100%;
     font-size: 13px;
