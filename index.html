@@ -11,112 +11,114 @@
 </head>
 
 <body>
-    <!-- Top -->
-    <div class="outer-wrapper">
-        <!-- Title start -->
-        <div id="wrapper-title" class="container">
-            <div class="row">
-                <div id="title" class="column">
-                    <h1>Welcome to my Ghibli Studio page!</h1>
+    <div class="body-wrapper">
+        <!-- Top -->
+        <div class="outer-wrapper">
+            <!-- Title start -->
+            <div id="wrapper-title" class="container">
+                <div class="row">
+                    <div id="title" class="column">
+                        <h1>Welcome to my Ghibli Studio page!</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="subtitle" class="column">
+                        <h2>'CLICK' a category to start exploring:</h2>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="subtitle" class="column">
-                    <h2>'CLICK' a category to start exploring:</h2>
+            <!-- Title end -->
+        </div>
+        <!-- Top End -->
+
+        <!-- middle -->
+        <div class="container">
+            <!-- Outer button -->
+                <div id="main-categories" class="row">
+                    <!-- buttons start -->
+                    <div id="films" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="films">
+                            Ghibli Films
+                        </button>
+                        <div class="row">
+                            <ul id="filmsList"></ul>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="people">
+                            Ghibli Characters (People)
+                        </button>
+                        <div class="row">
+                            <ul id="peopleList"></ul>
+                        </div>
+                    </div>
+
+                    <div id="species" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="species">
+                            Ghibli Characters (Species)
+                        </button>
+                        <div class="row">
+                            <ul id="speciesList"></ul>
+                        </div>
+                    </div>
+
+                    <div id="locations" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="locations">
+                            Ghibli Locations
+                        </button>
+                        <div class="row">
+                            <ul id="locationsList"></ul>
+                        </div>
+                    </div>
+
+                    <div id="vehicles" class="column-button">
+                        <button class="button-main" type="button" onclick="chooseInput(this)" id="vehicles">
+                            Ghibli Vehicles
+                        </button>
+                        <div class="row">
+                            <ul id="VehiclesList"></ul>
+                        </div>
+                    </div>
+                    <!-- buttons end -->
                 </div>
+            <!-- outer button end -->
+        </div>
+        <!-- middle end -->
+
+        <!-- bottom -->
+        <div id=displayList>
+            <!-- could hide a 'translate' html button, -->
+            <!-- then display it if films are selected -->
+            <!-- clicking would translate ALL titles -->
+            <!-- selecting another option would hide the button -->
+            <div class="translate-container" id="show-hide-div">
+                <div class="btn-translate-wrapper">
+                    <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="japanese">
+                        Original Japanese Titles
+                    </button>
+                </div>
+                <div class="btn-translate-wrapper">
+                    <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="english">
+                        English Titles
+                    </button>
+                </div>
+            </div>
+            <div class="ul-wrapper">
+                <ul class="ul-display" id="ul-one">
+                    <!-- selected list will be displayed here if i%3 =1 -->
+                </ul>
+                <ul class="ul-display" id="ul-two">
+                    <!-- selected list will be displayed here if i%3 =2-->
+                </ul>
+                <ul class="ul-display" id="ul-three">
+                    <!-- selected list will be displayed here if i%3 =0-->
+                </ul>
             </div>
         </div>
-        <!-- Title end -->
+        <!-- bottom end -->    
+
+        <script src="script.js"></script>
     </div>
-    <!-- Top End -->
-
-    <!-- middle -->
-    <div class="container">
-        <!-- Outer button -->
-            <div id="main-categories" class="row">
-                <!-- buttons start -->
-                <div id="films" class="column-button">
-                    <button class="button-main" type="button" onclick="chooseInput(this)" id="films">
-                        Ghibli Films
-                    </button>
-                    <div class="row">
-                        <ul id="filmsList"></ul>
-                    </div>
-                </div>
-                <div>
-                    <button class="button-main" type="button" onclick="chooseInput(this)" id="people">
-                        Ghibli Characters (People)
-                    </button>
-                    <div class="row">
-                        <ul id="peopleList"></ul>
-                    </div>
-                </div>
-
-                <div id="species" class="column-button">
-                    <button class="button-main" type="button" onclick="chooseInput(this)" id="species">
-                        Ghibli Characters (Species)
-                    </button>
-                    <div class="row">
-                        <ul id="speciesList"></ul>
-                    </div>
-                </div>
-
-                <div id="locations" class="column-button">
-                    <button class="button-main" type="button" onclick="chooseInput(this)" id="locations">
-                        Ghibli Locations
-                    </button>
-                    <div class="row">
-                        <ul id="locationsList"></ul>
-                    </div>
-                </div>
-
-                <div id="vehicles" class="column-button">
-                    <button class="button-main" type="button" onclick="chooseInput(this)" id="vehicles">
-                        Ghibli Vehicles
-                    </button>
-                    <div class="row">
-                        <ul id="VehiclesList"></ul>
-                    </div>
-                </div>
-                <!-- buttons end -->
-            </div>
-        <!-- outer button end -->
-    </div>
-    <!-- middle end -->
-
-    <!-- bottom -->
-    <div id=displayList>
-        <!-- could hide a 'translate' html button, -->
-        <!-- then display it if films are selected -->
-        <!-- clicking would translate ALL titles -->
-        <!-- selecting another option would hide the button -->
-        <div class="translate-container" id="show-hide-div">
-            <div class="btn-translate-wrapper">
-                <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="japanese">
-                    Original Japanese Titles
-                </button>
-            </div>
-            <div class="btn-translate-wrapper">
-                <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="english">
-                    English Titles
-                </button>
-            </div>
-        </div>
-        <div class="ul-wrapper">
-            <ul class="ul-display" id="ul-one">
-                <!-- selected list will be displayed here if i%3 =1 -->
-            </ul>
-            <ul class="ul-display" id="ul-two">
-                <!-- selected list will be displayed here if i%3 =2-->
-            </ul>
-            <ul class="ul-display" id="ul-three">
-                <!-- selected list will be displayed here if i%3 =0-->
-            </ul>
-        </div>
-    </div>
-    <!-- bottom end -->    
-
-    <script src="script.js"></script>
 </body>
 
 </html>
