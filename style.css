@@ -35,6 +35,46 @@
     height: 50px
 }
 
+.translate-container {
+    margin-top: 10px;
+    display: flex;
+
+}
+
+.btn-translate {
+    width: 50%;
+}
+
+.ul-display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-left: 2px solid black;
+    width: 32%;
+}
+
+.ul-wrapper {
+    display: flex;
+    flex-direction: row;
+    border-right: 2px solid black;
+}
+
+#ul-one {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ul-two {
+    display: flex;
+    flex-direction: column;
+}
+
+#ul-three {
+    display: flex;
+    flex-direction: column;
+}
+
 .button-main {
     color: blue;
     min-width: 100%;

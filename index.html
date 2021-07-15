@@ -11,9 +11,10 @@
 </head>
 
 <body>
-    <div id="wrapper-main" class="container">
+    <!-- Top -->
+    <div>
+        <!-- Title start -->
         <div id="wrapper-title" class="container">
-
             <div class="row">
                 <div id="title" class="column">
                     <h1>Welcome to my Ghibli Studio page!</h1>
@@ -25,21 +26,24 @@
                 </div>
             </div>
         </div>
+        <!-- Title end -->
+    </div>
+    <!-- Top End -->
 
-
-        <div class="container">
-            <button class="multibutton">
-                <div id="main-categories" class="row">
-
-                    <div id="films" class="column-button">
-                        <button class="button-main" type="button" onclick="chooseInput(this)" id="films">
-                            Ghibli Films
-                        </button>
-                        <div class="row">
-                            <ul id="filmsList"></ul>
-                        </div>
+    <!-- middle -->
+    <div class="container">
+        <!-- Outer button -->
+            <div id="main-categories" class="row">
+                <!-- buttons start -->
+                <div id="films" class="column-button">
+                    <button class="button-main" type="button" onclick="chooseInput(this)" id="films">
+                        Ghibli Films
+                    </button>
+                    <div class="row">
+                        <ul id="filmsList"></ul>
                     </div>
-
+                </div>
+                <div>
                     <button class="button-main" type="button" onclick="chooseInput(this)" id="people">
                         Ghibli Characters (People)
                     </button>
@@ -74,23 +78,40 @@
                         <ul id="VehiclesList"></ul>
                     </div>
                 </div>
+                <!-- buttons end -->
+            </div>
+        <!-- outer button end -->
+    </div>
+    <!-- middle end -->
 
-        </div>
-        </button>
-        <div id=displayList>
-            <!-- could hide a 'translate' html button, -->
-            <!-- then display it if films are selected -->
-            <!-- clicking would translate ALL titles -->
-            <!-- selecting another option would hide the button -->
-            <button class="btn-translate" id="translate-jp" type='button' onclick="translate()">Original Japanese Titles
+    <!-- bottom -->
+    <div id=displayList>
+        <!-- could hide a 'translate' html button, -->
+        <!-- then display it if films are selected -->
+        <!-- clicking would translate ALL titles -->
+        <!-- selecting another option would hide the button -->
+        <div class="translate-container">
+            <button class="btn-translate" id="translate-jp" type='button' onclick="translate()">
+                Original Japanese Titles
             </button>
-            <button class="btn-translate" id="translate-en" type="button" onclick="translate()">English Titles</button>
-            <ul class="ul-display">
-                <!-- selected list will be displayed here -->
+            <button class="btn-translate" id="translate-en" type="button" onclick="translate()">
+                English Titles
+            </button>
+        </div>
+        <div class="ul-wrapper">
+            <ul class="ul-display" id="ul-one">
+                <!-- selected list will be displayed here if i%3 =1 -->
+            </ul>
+            <ul class="ul-display" id="ul-two">
+                <!-- selected list will be displayed here if i%3 =2-->
+            </ul>
+            <ul class="ul-display" id="ul-three">
+                <!-- selected list will be displayed here if i%3 =0-->
             </ul>
         </div>
     </div>
-    </div>
+    <!-- bottom end -->    
+
     <script src="script.js"></script>
 </body>
 

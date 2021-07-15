@@ -9,7 +9,11 @@ const vehiclesUrl = `${baseUrl}vehicles`;
 let myUrl;
 let english = true;
 
-let displayItems = document.querySelector('.ul-display');
+let displayItems;
+let displayOne = document.getElementById('ul-one');
+let displayTwo = document.getElementById('ul-two');
+let displayThree = document.getElementById('ul-three');
+
 
 // accepts event from 5 different HTML buttons and calls getFetch()
 // with different parameters based on which button is clicked.
@@ -56,7 +60,18 @@ function translate() {
     //         })
     // }
 // }
+// function whichUl(myItem, myCount){   
+//     switch(!count %3){
+//         case (count %3 === 0):
+//                 displayItems = document.querySelector('#ul-three');
+//         case (count %3 === 2):
+//                 displayItems = document.querySelector('#ul-two');
+//         case (count %3 === 1):
+//                 displayItems = document.querySelector('#ul-one');
+//     }
 
+//     return displayItems.appendChild(listItem);  
+// }
 
 // getFetch function //
 async function getFetch(myParameter){
@@ -68,24 +83,55 @@ async function getFetch(myParameter){
         })
 
         .then((data) => {
+            console.log(data.length);
+            console.log(data);
 
             // Removes results from previous button before adding results from current button.
-            while (displayItems.firstChild) {
-                displayItems.removeChild(displayItems.firstChild);
+            while (displayOne.firstChild) {
+                displayOne.removeChild(displayOne.firstChild);
               };
-            
+
+            while (displayTwo.firstChild) {
+                displayTwo.removeChild(displayTwo.firstChild);
+            };
+
+            while (displayThree.firstChild) {
+                displayThree.removeChild(displayThree.firstChild);
+            };
+
+             let count = 0
             for (item of data){
+                count += 1;
                 let listItem = document.createElement('li');
                 // Films has a key of 'title' instead of 'name', 
                 // checks for key of 'title', if exists, returns 'title' instead of 'name'.
+                console.log(count);
                 if (item.hasOwnProperty('title')) {
                     listItem.innerHTML = '<p>' + item.title + '</p>';
-                    // document.createElement('<button class="true" id="item.id" onclick="translate(button.id)">Japanese</button>');
                 } else {
                     listItem.innerHTML = '<p>' + item.name + '</p>';
-                } 
+                }
+                    // switch(!count %3){
+                    //     case (count %3 === 0):
+                    //             displayItems = document.querySelector('#ul-three');
+                    //     case (count %3 === 2):
+                    //             displayItems = document.querySelector('#ul-two');
+                    //     case (count %3 === 1):
+                    //             displayItems = document.querySelector('#ul-one');
+                    // }
+            
+                if (count %3 === 0){
+                    displayItems = document.querySelector('#ul-three');
+                } else if (count %3 === 2){
+                    displayItems = document.querySelector('#ul-two');
+                } else if (count %3 === 1){
+                    displayItems = document.querySelector('#ul-one');
+                }
+                    // console.log(`displayItems: ${displayItems.id}`);
                 displayItems.appendChild(listItem);  
+
             }
+        
         })
         .catch((err) => {
             console.log(err);
