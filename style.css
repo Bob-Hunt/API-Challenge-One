@@ -32,7 +32,52 @@
 
 .column-button {
     width: 18%;
-    border: 2px solid red;
+    height: 50px
+}
+
+#show-translate-container {
+    margin-top: 10px;
+    display: flex;
+}
+
+#hide-translate-container {
+    margin-top: 10px;
+    display: none;
+}
+
+
+.btn-translate-wrapper {
+    width: 50%;
+}
+
+.ul-display {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-left: 2px solid black;
+    width: 32%;
+}
+
+.ul-wrapper {
+    display: flex;
+    flex-direction: row;
+    border-right: 2px solid black;
+}
+
+#ul-one {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#ul-two {
+    display: flex;
+    flex-direction: column;
+}
+
+#ul-three {
+    display: flex;
+    flex-direction: column;
 }
 
 .button-main {
@@ -40,4 +85,11 @@
     min-width: 100%;
     min-height: 100%;
     font-size: 13px;
+    border-radius: 5px;
+}
+
+.btn-translate-btn {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
 }

@@ -7,31 +7,36 @@ const locationsUrl = `${baseUrl}locations`;
 const vehiclesUrl = `${baseUrl}vehicles`;
 
 let myUrl;
+let english = true;
+let showHideDiv = document.querySelector('.translate-container');
+showHideDiv.setAttribute('id', 'hide-translate-container');
 
-let displayItems = document.querySelector('.ul-display');
 
-function chooseInput(mybutton){
+let displayItems;
+let displayOne = document.getElementById('ul-one');
+let displayTwo = document.getElementById('ul-two');
+let displayThree = document.getElementById('ul-three');
+
+
+// accepts event from 5 different HTML buttons and calls getFetch()
+// with different parameters based on which button is clicked.
+function chooseInput(mybutton, language){
     console.log(mybutton.id);
 
     switch (mybutton.id) {
         case 'films':
-            console.log(1);
-            getFetch(filmsUrl);
+            getFetch(filmsUrl, 'english');
             break;
         case 'people':
-            console.log(2);
             getFetch(peopleUrl);
             break;
         case 'species':
-            console.log(3);
             getFetch(speciesUrl);
             break;
         case 'locations':
-            console.log(4);
             getFetch(locationsUrl);
             break;
         case 'vehicles':
-            console.log(5);
             getFetch(vehiclesUrl);
             break;
         default:
@@ -39,9 +44,26 @@ function chooseInput(mybutton){
     }
 }
 
+function titleTranslate(transBtn){
+    console.log(transBtn.id);
 
-async function getFetch(myParameter){
+    switch (transBtn.id) {
+        case 'english':
+            getFetch(filmsUrl, 'english');
+            break;
+        case 'japanese':
+            getFetch(filmsUrl, 'japanese');
+            break;
+        default:
+            break;
+    }
+}
+
+
+// getFetch function //
+async function getFetch(myParameter, language){
     console.log(`myParameter: ${myParameter}`);
+    console.log(`language: ${language}`);
    
     await fetch(myParameter)
         .then(function(response){
@@ -49,18 +71,78 @@ async function getFetch(myParameter){
         })
 
         .then((data) => {
-            //work with json data here
-            for (item of data){
-                let listItem = document.createElement('li');
-                listItem.innerHTML = '<p>' + item.name + '</p>';
-                displayItems.appendChild(listItem);
-            }
-            // console.log(`type: `,typeof data);
             console.log(data.length);
             console.log(data);
+
+            // Removes results from previous button before adding results from current button.
+            while (displayOne.firstChild) {
+                displayOne.removeChild(displayOne.firstChild);
+              };
+
+            while (displayTwo.firstChild) {
+                displayTwo.removeChild(displayTwo.firstChild);
+            };
+
+            while (displayThree.firstChild) {
+                displayThree.removeChild(displayThree.firstChild);
+            };
+
+             let count = 0
+            for (item of data){
+                count += 1;
+                let listItem = document.createElement('li');
+                // Films has a key of 'title' instead of 'name', 
+                // checks for key of 'title', if exists, returns 'title' instead of 'name'.
+                console.log(count);
+
+                if (item.hasOwnProperty('title')) {
+                    if (language === 'english'){
+                        listItem.innerHTML = '<p>' + item.title + '</p>';
+                    } else if (language === 'japanese'){
+                        listItem.innerHTML = `<p>${item.original_title} (${item.original_title_romanised})</p>`;
+                    }
+                    } else if (language === 'romanji'){
+                        listItem.innerHTML = '<p>' + item.original_title_romanised +  '</p>';
+                
+                } else {
+                    listItem.innerHTML = '<p>' + item.name + '</p>';
+                }
+            
+                if (count %3 === 0){
+                    displayItems = document.querySelector('#ul-three');
+                } else if (count %3 === 2){
+                    displayItems = document.querySelector('#ul-two');
+                } else if (count %3 === 1){
+                    displayItems = document.querySelector('#ul-one');
+                }
+
+                displayItems.appendChild(listItem);  
+
+            }
+
+            // showHideDiv = document.querySelector('.translate-container');
+            // console.log(showHideDiv.id);
+            switch(language){
+                case 'english':
+                    showHideDiv.setAttribute('id', 'show-translate-container');
+                    break;
+                case 'japanese':
+                    showHideDiv.setAttribute('id', 'show-translate-container');
+                    break;
+                case 'romanji':
+                    showHideDiv.setAttribute('id', 'show-translate-container');
+                    break;
+                default:
+                    showHideDiv.setAttribute('id', 'hide-translate-container');
+                    break;
+                }
+                // console.log(showHideDiv.id);
+        
         })
         .catch((err) => {
             console.log(err);
         })
 }
 
+// Possibly, dynamically create a Translate button that translates all film
+// titles when pressed (clears element and reprints english AND Japanese)

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <title>Studio Ghibli API</title>
-    <!-- Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="wrapper-main" class="container">
-        <div id="wrapper-title" class="container">
 
+<body>
+    <!-- Top -->
+    <div>
+        <!-- Title start -->
+        <div id="wrapper-title" class="container">
             <div class="row">
                 <div id="title" class="column">
                     <h1>Welcome to my Ghibli Studio page!</h1>
@@ -26,63 +25,98 @@
                     <h2>'CLICK' a category to start exploring:</h2>
                 </div>
             </div>
-
         </div>
-        
-        <button class="container"> 
-            <button class="multibutton">
-                <div id="main-categories" class="row">
+        <!-- Title end -->
+    </div>
+    <!-- Top End -->
 
-                    <div id="films" class="column-button">
-                        <button class="button-main" type="button" onclick="chooseInput(this)" id="films">Ghibli Films</button>
-                        <div class="row">
-                            <ul id="filmsList"></ul>
-                        </div>
+    <!-- middle -->
+    <div class="container">
+        <!-- Outer button -->
+            <div id="main-categories" class="row">
+                <!-- buttons start -->
+                <div id="films" class="column-button">
+                    <button class="button-main" type="button" onclick="chooseInput(this)" id="films">
+                        Ghibli Films
+                    </button>
+                    <div class="row">
+                        <ul id="filmsList"></ul>
                     </div>
-
-                    <div id="people" class="column-button">
-                        <button class="button-main" type="button" onclick="chooseInput(this)" id="people">Ghibli Characters (People)</button>
-                        <div class="row">
-                            <ul id="peopleList"></ul>
-                        </div>
-                    </div>
-
-                    <div id="species" class="column-button">
-                        <button class="button-main" type="button" onclick="chooseInput(this)" id="species">Ghibli Characters (Species)</button>
-                        <div class="row">
-                            <ul id="speciesList"></ul>
-                        </div>
-                    </div>
-
-                    <div id="locations" class="column-button">
-                        <button class="button-main" type="button" onclick="chooseInput(this)" id="locations">Ghibli Locations</button>
-                        <div class="row">
-                            <ul id="locationsList"></ul>
-                        </div>
-                    </div>
-
-                    <div id="vehicles" class="column-button">
-                        <button class="button-main" type="button" onclick="chooseInput(this)" id="vehicles">Ghibli Vehicles</button>
-                        <div class="row">
-                            <ul id="VehiclesList"></ul>
-                        </div>
-                    </div>
-
-
                 </div>
-            </button>
-            <!-- <form> -->
-                <div id=displayList>
-                    <ul class="ul-display">
-                        <!-- selected list will be displayed here -->
-                    </ul>
+                <div>
+                    <button class="button-main" type="button" onclick="chooseInput(this)" id="people">
+                        Ghibli Characters (People)
+                    </button>
+                    <div class="row">
+                        <ul id="peopleList"></ul>
+                    </div>
                 </div>
-            <!-- </form>  -->
+
+                <div id="species" class="column-button">
+                    <button class="button-main" type="button" onclick="chooseInput(this)" id="species">
+                        Ghibli Characters (Species)
+                    </button>
+                    <div class="row">
+                        <ul id="speciesList"></ul>
+                    </div>
+                </div>
+
+                <div id="locations" class="column-button">
+                    <button class="button-main" type="button" onclick="chooseInput(this)" id="locations">
+                        Ghibli Locations
+                    </button>
+                    <div class="row">
+                        <ul id="locationsList"></ul>
+                    </div>
+                </div>
+
+                <div id="vehicles" class="column-button">
+                    <button class="button-main" type="button" onclick="chooseInput(this)" id="vehicles">
+                        Ghibli Vehicles
+                    </button>
+                    <div class="row">
+                        <ul id="VehiclesList"></ul>
+                    </div>
+                </div>
+                <!-- buttons end -->
+            </div>
+        <!-- outer button end -->
+    </div>
+    <!-- middle end -->
+
+    <!-- bottom -->
+    <div id=displayList>
+        <!-- could hide a 'translate' html button, -->
+        <!-- then display it if films are selected -->
+        <!-- clicking would translate ALL titles -->
+        <!-- selecting another option would hide the button -->
+        <div class="translate-container" id="show-hide-div">
+            <div class="btn-translate-wrapper">
+                <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="japanese">
+                    Original Japanese Titles
+                </button>
+            </div>
+            <div class="btn-translate-wrapper">
+                <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="english">
+                    English Titles
+                </button>
+            </div>
+        </div>
+        <div class="ul-wrapper">
+            <ul class="ul-display" id="ul-one">
+                <!-- selected list will be displayed here if i%3 =1 -->
+            </ul>
+            <ul class="ul-display" id="ul-two">
+                <!-- selected list will be displayed here if i%3 =2-->
+            </ul>
+            <ul class="ul-display" id="ul-three">
+                <!-- selected list will be displayed here if i%3 =0-->
+            </ul>
         </div>
     </div>
-    <!-- Bootstrap!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+    <!-- bottom end -->    
+
     <script src="script.js"></script>
 </body>
+
 </html>
