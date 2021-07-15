@@ -60,18 +60,7 @@ function translate() {
     //         })
     // }
 // }
-// function whichUl(myItem, myCount){   
-//     switch(!count %3){
-//         case (count %3 === 0):
-//                 displayItems = document.querySelector('#ul-three');
-//         case (count %3 === 2):
-//                 displayItems = document.querySelector('#ul-two');
-//         case (count %3 === 1):
-//                 displayItems = document.querySelector('#ul-one');
-//     }
 
-//     return displayItems.appendChild(listItem);  
-// }
 
 // getFetch function //
 async function getFetch(myParameter){
@@ -111,14 +100,6 @@ async function getFetch(myParameter){
                 } else {
                     listItem.innerHTML = '<p>' + item.name + '</p>';
                 }
-                    // switch(!count %3){
-                    //     case (count %3 === 0):
-                    //             displayItems = document.querySelector('#ul-three');
-                    //     case (count %3 === 2):
-                    //             displayItems = document.querySelector('#ul-two');
-                    //     case (count %3 === 1):
-                    //             displayItems = document.querySelector('#ul-one');
-                    // }
             
                 if (count %3 === 0){
                     displayItems = document.querySelector('#ul-three');
@@ -127,7 +108,7 @@ async function getFetch(myParameter){
                 } else if (count %3 === 1){
                     displayItems = document.querySelector('#ul-one');
                 }
-                    // console.log(`displayItems: ${displayItems.id}`);
+
                 displayItems.appendChild(listItem);  
 
             }
