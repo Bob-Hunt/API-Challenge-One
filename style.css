@@ -35,11 +35,16 @@
     height: 50px
 }
 
-.translate-container {
+#show-translate-container {
     margin-top: 10px;
     display: flex;
-
 }
+
+#hide-translate-container {
+    margin-top: 10px;
+    display: none;
+}
+
 
 .btn-translate-wrapper {
     width: 50%;

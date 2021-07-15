@@ -8,6 +8,9 @@ const vehiclesUrl = `${baseUrl}vehicles`;
 
 let myUrl;
 let english = true;
+let showHideDiv = document.querySelector('.translate-container');
+showHideDiv.setAttribute('id', 'hide-translate-container');
+
 
 let displayItems;
 let displayOne = document.getElementById('ul-one');
@@ -116,6 +119,24 @@ async function getFetch(myParameter, language){
                 displayItems.appendChild(listItem);  
 
             }
+
+            // showHideDiv = document.querySelector('.translate-container');
+            // console.log(showHideDiv.id);
+            switch(language){
+                case 'english':
+                    showHideDiv.setAttribute('id', 'show-translate-container');
+                    break;
+                case 'japanese':
+                    showHideDiv.setAttribute('id', 'show-translate-container');
+                    break;
+                case 'romanji':
+                    showHideDiv.setAttribute('id', 'show-translate-container');
+                    break;
+                default:
+                    showHideDiv.setAttribute('id', 'hide-translate-container');
+                    break;
+                }
+                // console.log(showHideDiv.id);
         
         })
         .catch((err) => {
