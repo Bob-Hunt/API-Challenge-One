@@ -69,7 +69,6 @@ background-color: bisque;
     justify-content: space-evenly;
     width: 100%;
     padding-top: 5px;
-    /* border: 2px solid red; */
 }
 
 .column-button {
@@ -96,18 +95,16 @@ background-color: bisque;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border-left: 2px solid black;
+    padding-right: 10px;
     width: 32%;
     font-size: 24px;
     background-color: rgba(255, 250, 240, 0.651);
-    /* color:floralwhite; */
     color: black;
 }
 
 .ul-wrapper {
     display: flex;
     flex-direction: row;
-    border-right: 2px solid black;
 }
 
 #ul-one {
@@ -132,6 +129,7 @@ background-color: bisque;
     min-height: 100%;
     font-size: 13px;
     border-radius: 5px;
+    border: 0px 4px 6px 0px;
 }
 
 .btn-translate-btn {
@@ -139,3 +137,4 @@ background-color: bisque;
     width: 100%;
     height: 100%;
 }
+
