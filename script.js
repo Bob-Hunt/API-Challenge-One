@@ -17,6 +17,21 @@ let displayOne = document.getElementById('ul-one');
 let displayTwo = document.getElementById('ul-two');
 let displayThree = document.getElementById('ul-three');
 
+// Multiple Background Images: Change On Button Click        //
+// From:  http://css3.bradshawenterprises.com/cfimg/#cfimg7  //
+$(document).ready(function() {
+    $("#cf7_controls").on('click', 'span', function() {
+      $("#cf7 img").removeClass("opaque");
+  
+      var newImage = $(this).index();
+  
+      $("#cf7 img").eq(newImage).addClass("opaque");
+  
+      $("#cf7_controls span").removeClass("selected");
+      $(this).addClass("selected");
+    });
+  });
+  
 
 // accepts event from 5 different HTML buttons and calls getFetch()
 // with different parameters based on which button is clicked.
