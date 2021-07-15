@@ -17,12 +17,12 @@ let displayThree = document.getElementById('ul-three');
 
 // accepts event from 5 different HTML buttons and calls getFetch()
 // with different parameters based on which button is clicked.
-function chooseInput(mybutton){
+function chooseInput(mybutton, language){
     console.log(mybutton.id);
 
     switch (mybutton.id) {
         case 'films':
-            getFetch(filmsUrl);
+            getFetch(filmsUrl, 'english');
             break;
         case 'people':
             getFetch(peopleUrl);
@@ -41,30 +41,26 @@ function chooseInput(mybutton){
     }
 }
 
-function translate() {
-    console.log("Konnichiwa!");
-};
-    // async function(filmId){
-    //     let filmId = filmId;
-    //     await fetch(filmsUrl)
-    //         .then((response) => response.json)
-    //         .then(function(films) {
-    //             for (film of films){
-    //                 if (filmId === film.id){
-    //                     let translateItem = document.getElementById(filmId);
-    //                     translateItem.innerHtml = '<p>' + item.original_title +'....' + '<button class="english">Translate</button>' + '</p>';
-                   
-    //                 }
-    //             }
+function titleTranslate(transBtn){
+    console.log(transBtn.id);
 
-    //         })
-    // }
-// }
+    switch (transBtn.id) {
+        case 'english':
+            getFetch(filmsUrl, 'english');
+            break;
+        case 'japanese':
+            getFetch(filmsUrl, 'japanese');
+            break;
+        default:
+            break;
+    }
+}
 
 
 // getFetch function //
-async function getFetch(myParameter){
+async function getFetch(myParameter, language){
     console.log(`myParameter: ${myParameter}`);
+    console.log(`language: ${language}`);
    
     await fetch(myParameter)
         .then(function(response){
@@ -95,8 +91,16 @@ async function getFetch(myParameter){
                 // Films has a key of 'title' instead of 'name', 
                 // checks for key of 'title', if exists, returns 'title' instead of 'name'.
                 console.log(count);
+
                 if (item.hasOwnProperty('title')) {
-                    listItem.innerHTML = '<p>' + item.title + '</p>';
+                    if (language === 'english'){
+                        listItem.innerHTML = '<p>' + item.title + '</p>';
+                    } else if (language === 'japanese'){
+                        listItem.innerHTML = `<p>${item.original_title} (${item.original_title_romanised})</p>`;
+                    }
+                    } else if (language === 'romanji'){
+                        listItem.innerHTML = '<p>' + item.original_title_romanised +  '</p>';
+                
                 } else {
                     listItem.innerHTML = '<p>' + item.name + '</p>';
                 }

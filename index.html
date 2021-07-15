@@ -91,12 +91,16 @@
         <!-- clicking would translate ALL titles -->
         <!-- selecting another option would hide the button -->
         <div class="translate-container">
-            <button class="btn-translate" id="translate-jp" type='button' onclick="translate()">
-                Original Japanese Titles
-            </button>
-            <button class="btn-translate" id="translate-en" type="button" onclick="translate()">
-                English Titles
-            </button>
+            <div class="btn-translate-wrapper">
+                <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="japanese">
+                    Original Japanese Titles
+                </button>
+            </div>
+            <div class="btn-translate-wrapper">
+                <button class="btn-translate-btn" type="button" onclick="titleTranslate(this)" id="english">
+                    English Titles
+                </button>
+            </div>
         </div>
         <div class="ul-wrapper">
             <ul class="ul-display" id="ul-one">
