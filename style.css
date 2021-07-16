@@ -4,28 +4,10 @@ body {
     padding: 0px;
 }
 
-.body-wrapper {
+.body-container {
     height: auto;
     min-height: 100vh;
     width: 100vw;
-    /* background-image: url("./Assets/nausicaa009.jpeg"); */
-    /* background-image: url("./Assets/chihiro007.jpeg"); */
-    /* background-image: url("./Assets/chihiro011.jpeg"); */
-    /* background-image: url("./Assets/chihiro018.jpeg"); */
-    background-image: url("./Assets/chihiro036.jpeg");
-    /* background-image: url("./Assets/chihiro041.jpeg"); */
-    /* background-image: url("./Assets/laputa039.jpeg"); */
-    /* background-image: url("./Assets/nausicaa009.jpeg"); */
-    /* background-image: url("./Assets/nausicaa010.jpeg"); */
-    /* background-image: url("./Assets/nausicaa049.jpeg"); */
-    /* background-image: url("./Assets/onyourmark001.jpeg"); */
-    /* background-image: url("./Assets/onyourmark005.jpeg"); */
-    /* background-image: url("./Assets/onyourmark021.jpeg"); */
-    /* background-image: url("./Assets/onyourmark027.jpeg"); */
-    /* background-image: url("./Assets/redturtle017.jpeg"); */
-    /* background-image: url("./Assets/redturtle034.jpeg"); */
-    /* background-image: url("./Assets/totoro029.jpeg"); */
-    /* background-image: url("./Assets/totoro042.jpeg"); */
     background-color: rgb(152, 212, 236);
 }
 
@@ -59,6 +41,20 @@ background-color: bisque;
     justify-content: center;
 }
 
+.body-wrapper {
+    min-height: 70vh;
+    border: 2px solid orange;
+    position: relative;
+}
+
+.body-wrapper-image {
+    position: absolute;
+    min-height: 70vh;
+    width: 100vw;
+    object-fit: fill;
+    background-image: url("./Assets/chihiro036.jpeg");
+}
+
 #main-categories {
     display: flex;
     flex-direction: row;
@@ -81,24 +77,41 @@ background-color: bisque;
     border: 0px 4px 6px 0px;
 }
 
-#films {
+#films-en {
+    background-position-x: center;  
+    background-position-y: top; 
+    background-size: cover; 
+}
 
+#films-jp {
+    background-position-x: left;  
+    background-position-y: top; 
+    background-size: cover; 
 }
 
 #people {
-    background-image: url("chihiro018");
+    background-position-x: center;  
+    background-position-y: top; 
+    background-size: cover; 
 }
 
 #species {
+    background-position-x: center;  
+    background-position-y: center; 
+    background-size: cover; 
 
 }
 
 #locations {
-
+    background-position-x: center;  
+    background-position-y: top; 
+    background-size: cover; 
 }
 
 #vehicles {
-
+    background-position-x: left;  
+    background-position-y: center; 
+    background-size: cover;
 }
 
 #show-translate-container {
