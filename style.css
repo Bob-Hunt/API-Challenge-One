@@ -4,32 +4,11 @@ body {
     padding: 0px;
 }
 
-.body-wrapper {
+.body-container {
     height: auto;
     min-height: 100vh;
-
     width: 100vw;
-    /* background-image: url("./Assets/nausicaa009.jpeg"); */
-    /* background-image: url("./Assets/chihiro007.jpeg"); */
-    /* background-image: url("./Assets/chihiro011.jpeg"); */
-    /* background-image: url("./Assets/chihiro018.jpeg"); */
-    background-image: url("./Assets/chihiro036.jpeg");
-    /* background-image: url("./Assets/chihiro041.jpeg"); */
-    /* background-image: url("./Assets/laputa039.jpeg"); */
-    /* background-image: url("./Assets/nausicaa009.jpeg"); */
-    /* background-image: url("./Assets/nausicaa010.jpeg"); */
-    /* background-image: url("./Assets/nausicaa049.jpeg"); */
-    /* background-image: url("./Assets/onyourmark001.jpeg"); */
-    /* background-image: url("./Assets/onyourmark005.jpeg"); */
-    /* background-image: url("./Assets/onyourmark021.jpeg"); */
-    /* background-image: url("./Assets/onyourmark027.jpeg"); */
-    /* background-image: url("./Assets/redturtle017.jpeg"); */
-    /* background-image: url("./Assets/redturtle034.jpeg"); */
-    /* background-image: url("./Assets/totoro029.jpeg"); */
-    /* background-image: url("./Assets/totoro042.jpeg"); */
-
-
-    background-color: blue;
+    background-color: rgb(152, 212, 236);
 }
 
 .outer-wrapper{
@@ -44,7 +23,6 @@ background-color: bisque;
     align-items: center;
     justify-content: center;
     color: rgb(231, 217, 200);
-
 }
 
 #title{
@@ -63,6 +41,20 @@ background-color: bisque;
     justify-content: center;
 }
 
+.body-wrapper {
+    min-height: 70vh;
+    border: 2px solid orange;
+    position: relative;
+}
+
+.body-wrapper-image {
+    position: absolute;
+    min-height: 70vh;
+    width: 100vw;
+    object-fit: fill;
+    background-image: url("./Assets/chihiro036.jpeg");
+}
+
 #main-categories {
     display: flex;
     flex-direction: row;
@@ -76,6 +68,52 @@ background-color: bisque;
     height: 50px
 }
 
+.button-main {
+    color:rgb(88, 4, 4);
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 0px 4px 6px 0px;
+}
+
+#films-en {
+    background-position-x: center;  
+    background-position-y: top; 
+    background-size: cover; 
+}
+
+#films-jp {
+    background-position-x: left;  
+    background-position-y: top; 
+    background-size: cover; 
+}
+
+#people {
+    background-position-x: center;  
+    background-position-y: top; 
+    background-size: cover; 
+}
+
+#species {
+    background-position-x: center;  
+    background-position-y: center; 
+    background-size: cover; 
+
+}
+
+#locations {
+    background-position-x: center;  
+    background-position-y: top; 
+    background-size: cover; 
+}
+
+#vehicles {
+    background-position-x: left;  
+    background-position-y: center; 
+    background-size: cover;
+}
+
 #show-translate-container {
     margin-top: 10px;
     display: flex;
@@ -86,9 +124,15 @@ background-color: bisque;
     display: none;
 }
 
-
 .btn-translate-wrapper {
     width: 50%;
+}
+
+.btn-translate-btn {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(223, 76, 76);
 }
 
 .ul-display {
@@ -110,7 +154,6 @@ background-color: bisque;
 #ul-one {
     display: flex;
     flex-direction: column;
-
 }
 
 #ul-two {
@@ -122,19 +165,3 @@ background-color: bisque;
     display: flex;
     flex-direction: column;
 }
-
-.button-main {
-    color:rgb(88, 4, 4);
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 13px;
-    border-radius: 5px;
-    border: 0px 4px 6px 0px;
-}
-
-.btn-translate-btn {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-}
-

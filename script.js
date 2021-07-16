@@ -12,6 +12,7 @@ let showHideDiv = document.querySelector('.translate-container');
 showHideDiv.setAttribute('id', 'hide-translate-container');
 
 let displayItems;
+let bodyWrapperImg = document.querySelector(".body-wrapper-image");
 let displayOne = document.getElementById('ul-one');
 let displayTwo = document.getElementById('ul-two');
 let displayThree = document.getElementById('ul-three');
@@ -26,16 +27,16 @@ function chooseInput(mybutton, language){
             getFetch(filmsUrl, 'english');
             break;
         case 'people':
-            getFetch(peopleUrl);
+            getFetch(peopleUrl, 'people');
             break;
         case 'species':
-            getFetch(speciesUrl);
+            getFetch(speciesUrl, 'species');
             break;
         case 'locations':
-            getFetch(locationsUrl);
+            getFetch(locationsUrl, 'locations');
             break;
         case 'vehicles':
-            getFetch(vehiclesUrl);
+            getFetch(vehiclesUrl, 'vehicles');
             break;
         default:
             break;
@@ -90,13 +91,38 @@ async function getFetch(myParameter, language){
                 if (item.hasOwnProperty('title')) {
                     if (language === 'english'){
                         listItem.innerHTML = '<p>' + item.title + '</p>';
+                        bodyWrapperImg.style.backgroundImage ='url("./Assets/chihiro036.jpeg")';
+                        bodyWrapperImg.setAttribute('id', 'films-en');
+
                     } else if (language === 'japanese'){
                         listItem.innerHTML = `<p>${item.original_title} (${item.original_title_romanised})</p>`;
+                        bodyWrapperImg.style.backgroundImage = 'url("./Assets/nausicaa009.jpeg")';
+                        bodyWrapperImg.setAttribute('id', 'films-jp');
                     }
                     } else if (language === 'romanji'){
                         listItem.innerHTML = '<p>' + item.original_title_romanised +  '</p>';
+                        bodyWrapperImg.style.backgroundImage = 'url("./Assets/chihiro036.jpeg")';
+                        bodyWrapperImg.setAttribute('id', 'films-en');
                 } else {
                     listItem.innerHTML = '<p>' + item.name + '</p>';
+                    switch (language){
+                        case 'people':
+                            bodyWrapperImg.style.backgroundImage = 'url("./Assets/nausicaa049.jpeg")';
+                            bodyWrapperImg.setAttribute('id', 'people');
+                            break;
+                        case 'species':
+                            bodyWrapperImg.style.backgroundImage = 'url("./Assets/totoro024.jpeg")';
+                            bodyWrapperImg.setAttribute('id', 'species');
+                            break;
+                        case 'locations':
+                            bodyWrapperImg.style.backgroundImage = 'url("./Assets/chihiro011.jpeg")';
+                            bodyWrapperImg.setAttribute('id', 'locations');
+                            break;
+                        case 'vehicles':
+                            bodyWrapperImg.style.backgroundImage = 'url("./Assets/ponyo039.jpeg")';
+                            bodyWrapperImg.setAttribute('id', 'vehicles');
+                            break;
+                    }
                 }
    
                 //  Based on each item's 'count' it assigns it to one of 3 columns
