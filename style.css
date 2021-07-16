@@ -13,7 +13,7 @@ body {
 
 .outer-wrapper{
     background-image: url("./Assets/chihiro007.jpeg");
-background-color: bisque;
+    background-color: bisque;
 }
 
 #wrapper-title{
@@ -43,7 +43,6 @@ background-color: bisque;
 
 .body-wrapper {
     min-height: 70vh;
-    border: 2px solid orange;
     position: relative;
 }
 
